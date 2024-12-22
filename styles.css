@@ -71,11 +71,10 @@ h1 {
 
 .product-list {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
 .product-item {
@@ -86,8 +85,8 @@ h1 {
     width: calc(50% - 40px); /* Adjust width to fit two items per row */
     text-align: center;
     box-sizing: border-box;
+    margin-bottom: 20px; /* Add margin to prevent overlapping */
 }
-
 
 .product-item h2 {
     margin-top: 0;
@@ -117,11 +116,12 @@ h1 {
     margin: 10px 0; /* Add margin for spacing */
     font-weight: bold; /* Make the price bold */
 }
+
 .add-product-button-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px
+    margin: 20px;
 }
 
 .add-product-button {
@@ -139,8 +139,6 @@ h1 {
     transform: scale(1.05);
 }
 
-
-
 /* Стили для карточки товара */
 .tovar {
     margin: 0;
@@ -157,7 +155,6 @@ h1 {
     right: 0;
     width: auto;
     z-index: 1000;
-
 }
 
 .user-info-tov a {
@@ -267,7 +264,6 @@ button {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s;
-
 }
 
 button:hover {
@@ -275,7 +271,6 @@ button:hover {
 }
 
 /* Стили для административной панели */
-
 .admin {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -364,31 +359,38 @@ button:hover {
     background-color: gray;
     transform: scale(1.05);
 }
+
 /* Стили для навигации по категориям */
 .category-navigation {
     margin-bottom: 20px;
     text-align: center;
 }
+
 .category-navigation h2 {
     margin-bottom: 10px;
 }
+
 .category-navigation ul {
     list-style-type: none;
     padding: 0;
 }
+
 .category-navigation ul li {
     display: inline-block;
     margin: 0 10px;
     position: relative;
 }
+
 .category-navigation ul li a {
     text-decoration: none;
     color: black;
     transition: color 0.2s;
 }
+
 .category-navigation ul li a:hover {
     color: grey;
 }
+
 .category-navigation ul ul {
     display: none;
     position: absolute;
@@ -400,14 +402,17 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
+
 .category-navigation ul li:hover ul {
     display: block;
 }
+
 .category-navigation ul ul li {
     display: block;
     margin: 0;
     padding: 10px;
 }
+
 .category-navigation ul ul li a {
     display: block;
     padding: 10px;
@@ -432,8 +437,9 @@ button:hover {
 .return-link a:hover {
     background-color: grey;
 }
+
 /* Панель входа */
-.login, .register{
+.login, .register {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -444,7 +450,8 @@ button:hover {
     align-items: center;
     height: 100vh;
 }
-.login-container, .register-container{
+
+.login-container, .register-container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -480,7 +487,7 @@ button:hover {
     box-sizing: border-box;
 }
 
-.login-container button,.register-button {
+.login-container button, .register-button {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: white;
@@ -500,6 +507,7 @@ button:hover {
     color: red;
     margin-bottom: 20px;
 }
+
 .register-button {
     display: inline-block;
     margin-top: 20px;
@@ -516,6 +524,7 @@ button:hover {
     background-color: gray;
     transform: scale(1.05);
 }
+
 /* Добавление продукта */
 .add-product {
     font-family: Arial, sans-serif;
@@ -585,4 +594,69 @@ button:hover {
     margin-bottom: 20px;
 }
 
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .category-navigation {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .category-navigation ul li {
+        margin: 5px 0;
+    }
+
+    .user-info {
+        position: static;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .product-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-item {
+        width: calc(100% - 40px);
+    }
+
+    .product-detail {
+        padding: 10px;
+    }
+
+    .product-detail img {
+        max-width: 100%;
+    }
+
+    .product-gallery img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .admin-container, .login-container, .register-container, .add-product-container {
+        width: 90%;
+        max-width: none;
+    }
+
+    .return-arrow {
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .return-link a {
+        width: 100%;
+    }
+
+    .add-product-button-container {
+        margin: 10px;
+    }
+
+    .add-product-button {
+        width: 100%;
+    }
+}
