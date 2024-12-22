@@ -12,7 +12,7 @@ try {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $password = $_POST['password'];
 
     // Проверка наличия пользователя с таким же именем
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
