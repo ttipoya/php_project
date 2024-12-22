@@ -87,7 +87,7 @@ $conn = null;
 <body class="tovar">
 <div class="user-info-tov">
     <?php if (isset($_SESSION['username'])): ?>
-        <p>Добро пожаловать, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
+        <p>Добро пожаловать, <?php echo htmlspecialchars($_SESSION['username']); ?></p>
         <a href="logout.php">Выйти из аккаунта</a>
     <?php else: ?>
         <p>Пожалуйста <a href="login.php">войдите в аккаунт</a> для доступа к полному функционалу.</p>

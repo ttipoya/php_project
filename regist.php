@@ -12,9 +12,9 @@ try {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    // Проверка наличия пользователя с таким же именем или email
+    // Проверка наличия пользователя с таким же именем
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
     $stmt->bindParam(':username', $username, PDO::PARAM_STR);
     $stmt->execute();
@@ -29,14 +29,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':password', $password, PDO::PARAM_STR);
         $stmt->execute();
 
-        // Успешная регистрация
+        // Получение ID нового пользователя
+        $user_id = $conn->lastInsertId();
+
+        // Успешная регистрация и автоматический вход
+        $_SESSION['user_id'] = $user_id;
         $_SESSION['username'] = $username;
+        $_SESSION['role'] = 'user'; // Установите это значение в зависимости от вашей логики
         $_SESSION['is_admin'] = false; // Установите это значение в зависимости от вашей логики
+
         header("Location: main.php");
         exit;
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" id="username" name="username" required>
         <label for="password">Пароль:</label>
         <input type="password" id="password" name="password" required>
-        <button type="submit" style="border-radius: 4px;border: 1px solid #ddd">Зарегистрироваться</button>
+        <button type="submit">Зарегистрироваться</button>
     </form>
     <?php if (isset($error)): ?>
         <p class="error-message"><?php echo $error; ?></p>
