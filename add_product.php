@@ -1,10 +1,6 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['admin_id'])) {
-    header('Location: admin_login.php');
-    exit();
-}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Подключение к базе данных
@@ -59,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    header('Location: admin_panel.php');
+    header('Location: main.php');
     exit();
 }
 ?>

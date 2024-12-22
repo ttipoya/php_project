@@ -93,15 +93,16 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <img src="images/default.jpg" alt="Default Image">
                 <?php endif; ?>
             </a>
-            <h2></h2>
             <h2><?php echo htmlspecialchars($product['name']); ?></h2>
             <p><?php echo htmlspecialchars(substr($product['description'], 0, 100)); ?>...</p>
             <p class="price">Цена: <?php echo htmlspecialchars($product['price']); ?> руб.</p>
         </div>
     <?php endforeach; ?>
 </div>
-<div class="add-product-button-container">
-    <a href="add_product.php" class="add-product-button">Добавить товар</a>
-</div>
+<?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+    <div class="add-product-button-container">
+        <a href="add_product.php" class="add-product-button">Добавить товар</a>
+    </div>
+<?php endif; ?>
 </body>
 </html>
