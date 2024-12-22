@@ -93,6 +93,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <img src="images/default.jpg" alt="Default Image">
                 <?php endif; ?>
             </a>
+            <h2></h2>
             <h2><?php echo htmlspecialchars($product['name']); ?></h2>
             <p><?php echo htmlspecialchars(substr($product['description'], 0, 100)); ?>...</p>
             <p class="price">Цена: <?php echo htmlspecialchars($product['price']); ?> руб.</p>
