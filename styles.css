@@ -1,0 +1,588 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: black;
+    position: relative;
+}
+
+.category-navigation {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 40px); /* Adjust width to fit the full width of the container */
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+}
+
+.category-navigation h2 {
+    margin-top: 0;
+}
+
+.category-navigation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.category-navigation ul li {
+    margin: 10px 0;
+}
+
+.category-navigation ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.category-navigation ul li a:hover {
+    text-decoration: underline;
+}
+
+.user-info {
+    padding: 10px;
+    text-align: right;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    z-index: 1000;
+}
+
+.user-info a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    padding: 13.33px; /* Reduced padding by 1.5 times */
+    width: calc(50% - 40px); /* Adjust width to fit two items per row */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+.product-item h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.2em; /* Reduced font size by 1.5 times */
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.product-item img:hover {
+    transform: scale(1.05);
+}
+
+.product-item p {
+    color: #666;
+    font-size: 0.8em; /* Reduced font size by 1.5 times */
+}
+
+.product-item .price {
+    font-size: 1em; /* Adjust the font size as needed */
+    margin: 10px 0; /* Add margin for spacing */
+    font-weight: bold; /* Make the price bold */
+}
+.add-product-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px
+}
+
+.add-product-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #ddd; /* Added border */
+}
+
+.add-product-button:hover {
+    background-color: gray;
+    transform: scale(1.05);
+}
+
+
+
+/* Стили для карточки товара */
+.tovar {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+}
+
+.user-info-tov {
+    padding: 10px;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    z-index: 1000;
+
+}
+
+.user-info-tov a {
+    text-decoration: none;
+}
+
+.return-arrow {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: black;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.return-arrow:hover {
+    color: gray;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.product-detail {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.product-detail p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.product-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.product-gallery img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.comments {
+    margin-bottom: 20px;
+}
+
+.comment {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.comment p {
+    margin: 0;
+    font-size: 1em;
+    color: #666;
+}
+
+.comment p:first-child {
+    font-weight: bold;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    resize: vertical;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+}
+
+button:hover {
+    background-color: gray;
+}
+
+/* Стили для административной панели */
+
+.admin {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.admin-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.admin-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.admin-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.admin-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.admin-container button {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #ddd; /* Added border */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.admin-container button:hover {
+    background-color: gray;
+    transform: scale(1.05);
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.admin-panel a:hover {
+    background-color: #8e44ad;
+    transform: scale(1.05);
+}
+
+.admin-container a.admin-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    background-color: white;
+    color: black;
+    border: 1px solid #ddd; /* Added border */
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.admin-container a.admin-button:hover {
+    background-color: gray;
+    transform: scale(1.05);
+}
+/* Стили для навигации по категориям */
+.category-navigation {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.category-navigation h2 {
+    margin-bottom: 10px;
+}
+.category-navigation ul {
+    list-style-type: none;
+    padding: 0;
+}
+.category-navigation ul li {
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+}
+.category-navigation ul li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.2s;
+}
+.category-navigation ul li a:hover {
+    color: grey;
+}
+.category-navigation ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.category-navigation ul li:hover ul {
+    display: block;
+}
+.category-navigation ul ul li {
+    display: block;
+    margin: 0;
+    padding: 10px;
+}
+.category-navigation ul ul li a {
+    display: block;
+    padding: 10px;
+}
+
+/* Стили для ссылки возврата на главную страницу */
+.return-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.return-link a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.return-link a:hover {
+    background-color: grey;
+}
+/* Панель входа */
+.login, .register{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container, .register-container{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h1, .register-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-container form, .register-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container label, .register-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-container input, .register-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-container button,.register-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.login-container button:hover {
+    background-color: gray;
+    transform: scale(1.05);
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 20px;
+}
+.register-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.register-button:hover {
+    background-color: gray;
+    transform: scale(1.05);
+}
+/* Добавление продукта */
+.add-product {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.add-product-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.add-product-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.add-product-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-product-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.add-product-container input,
+.add-product-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.add-product-container button {
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.add-product-container button:hover {
+    background-color: gray;
+    transform: scale(1.05);
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 20px;
+}
+
+
